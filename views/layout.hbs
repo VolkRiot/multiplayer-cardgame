@@ -1,10 +1,126 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    {{{body}}}
-  </body>
+
+<head>
+  <title>{{title}}</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://cdn.bootcss.com/hover.css/2.1.1/css/hover-min.css">
+</head>
+
+<body>
+  <div class="game-container">
+
+    <main>
+
+      <section class="topic-container">
+
+
+        <img class="topic-image topic--spacing topic--border shadow" src="/image/loading.jpg" />
+
+        <div id="score-container" class="topic--spacing topic--border shadow">
+          <h4 class="underline">Scores<span class="sub-text"></span></h4>
+
+          <div class="players"></div>
+        </div>
+
+      </section>
+      <section class="choice-container">
+
+        <div class="timer shadow progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"  aria-valuemin="0" aria-valuemax="100" style="height:40px; width: 100%"></div>
+        </div>
+        <div id="choice-card-container">
+          <div class="choice-card shadow">
+            <div class="choice-card-inner-border">
+              <img class="choice-card-img" id="card-1" src="/image/waiting.jpg" />
+            </div>
+          </div>
+          <div class="choice-card shadow">
+            <div class="choice-card-inner-border" >
+              <img class="choice-card-img" id="card-2" src="/image/waiting.jpg" />
+            </div>
+          </div>
+          <div class="choice-card shadow">
+            <div class="choice-card-inner-border">
+              <img class="choice-card-img" id="card-3" src="/image/waiting.jpg" />
+            </div>
+          </div>
+          <div class="choice-card shadow">
+            <div class="choice-card-inner-border">
+              <img class="choice-card-img" id="card-4" src="/image/waiting.jpg" />
+            </div>
+          </div>
+        </div>
+        <div id="player-cards">
+
+          <div class="card shadow">
+            <div class="card-inner-border">
+              <div class="card-block">
+                <p class="card-text">
+                  <div class="form-group meme-input">
+                    <input id="top-text" placeholder="TOP TEXT" type="text" class="form-control ">
+                    <input id="bottom-text" placeholder="BOTTOM TEXT" type="text" class="form-control">
+                  </div>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button id="meme-submit" type="button" class="btn  btn-block btn-success">Submit</button>
+
+        </div>
+
+
+      </section>
+      <section class="chat">
+        <div class="chat-display">
+
+        </div>
+        <form>
+          <div class="input-group">
+            <input type="text" id="message-input" class="form-control" placeholder="">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" id="message-submit" type="submit" style="display: none;">Send</button>
+            </span>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <div id="best-meme" class="modal fade">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content ">
+          <div class="modal-header">
+            <h4 class="modal-title" id="winner-modal-title">Winner: Player 1 !!!!</h4>
+
+          </div>
+
+          <div class="modal-body">
+            <div class = "container-fluid">
+              <img class="choice-card-inner-border img-fluid max-h" id="winner-modal-meme" src="http://i3.ytimg.com/vi/frlDkcG8Z9E/hqdefault.jpg" />
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <!--Supposedly SocketIO is automatically exposed to front end-->
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <!--Temporary until code is consolidated (Multi-module)-->
+  <script src="/javascript/game.js"></script>
+  <script src="/javascript/page_init.js"></script>
+</body>
+
 </html>

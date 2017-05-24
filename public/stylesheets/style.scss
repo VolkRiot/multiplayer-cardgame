@@ -1,20 +1,26 @@
+// *{
+//   border:1px solid green;
+// }
+$select-color: red;
+
 body,
 html {
   height: 100%;
   overflow: hidden;
 }
 
-.modal-title {
+
+.modal-title{
   text-align: center !important;
-  width: 100%;
+  width:100%;
 }
 
-.modal-body {
-  align-self: center;
+.modal-body{
+  align-self:center;
 }
 
-.max-h {
-  max-height: 75%;
+.max-h{
+  max-height:75%;
 }
 
 .shadow {
@@ -23,9 +29,11 @@ html {
   box-shadow: 5px 5px 5px 0 rgba(67, 67, 69, 0.5);
 }
 
-.underline {
-  padding-bottom: 5px;
-  border-bottom: 1px solid #ccc;
+
+
+.underline{
+  padding-bottom:5px;
+  border-bottom:1px solid #ccc;
 }
 
 .sub-text {
@@ -39,12 +47,13 @@ html {
 .timer {
   margin-top: 15px;
   margin-bottom: 30px;
-}
 
-#time {
-  font-size: 22px;
-  padding: 0;
-  margin: 0;
+
+}
+#time{
+  font-size:22px;
+  padding:0;
+  margin:0;
 }
 
 #top-text {
@@ -88,10 +97,10 @@ html {
   height: 100%;
   background: url("http://www.designbolts.com/wp-content/uploads/2013/02/Free-Seamless-Wood-Textures-Patterns-For-3D-Mapping-2.jpg") repeat;
   padding: 20px;
-}
 
-.game-container-border {
-  border-radius: 5px;
+  &-border {
+    border-radius: 5px;
+  }
 }
 
 header {
@@ -111,6 +120,7 @@ main {
 .choice-container {
   flex: 1;
   margin: 0 3%;
+
 }
 
 .chat {
@@ -123,63 +133,67 @@ main {
   border: 1px solid #ddd;
   border-radius: 0.25rem;
   background-color: rgba(255, 255, 255, 0.55);
+
+  &-display {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom:10px;
+  }
+
+  &-thumbnail{
+    border:1px solid antiquewhite;
+    border-radius: 50%;
+    max-width: 35px;
+    margin-right:10px;
+  }
+
+  &-p{
+    font-size:14px;
+    word-wrap: break-word;
+    margin-bottom:10px;
+  }
+
+  &-input {
+    margin-top: 20px;
+  }
 }
 
-.chat-display {
-  flex: 1;
-  overflow-y: auto;
-  padding-bottom: 10px;
+.topic {
+  &-container {}
+
+  &--spacing {
+    margin: 15px 0;
+  }
+
+  &--border {
+    padding: 0.40rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    background-color: white;
+  }
+
+  &-image {
+    max-width: 100%;
+    max-height:320px;
+  }
 }
 
-.chat-thumbnail {
-  border: 1px solid antiquewhite;
-  border-radius: 50%;
-  max-width: 35px;
-  margin-right: 10px;
-}
+.player{
+  margin-bottom:5px;
+  padding:5px;
 
-.chat-p {
-  font-size: 14px;
-  word-wrap: break-word;
-  margin-bottom: 10px;
-}
+  &-image{
+    border:1px solid antiquewhite;
+    border-radius: 50%;
+    margin-right:20px;
+    max-height:30px;
+  }
 
-.chat-input {
-  margin-top: 20px;
-}
-
-.topic--spacing {
-  margin: 15px 0;
-}
-
-.topic--border {
-  padding: 0.40rem;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-  background-color: white;
-}
-
-.topic-image {
-  max-width: 100%;
-  max-height: 320px;
-}
-
-.player {
-  margin-bottom: 5px;
-  padding: 5px;
-}
-
-.player-image {
-  border: 1px solid antiquewhite;
-  border-radius: 50%;
-  margin-right: 20px;
-  max-height: 30px;
-}
-
-.player-judge {
-  background-color: rgba(255, 0, 0, 0.4);
-  border-radius: 5px;
-  border: 1px solid antiquewhite;
+  &-judge{
+    background-color:rgba(255,0,0,0.40);
+    border-radius:5px;
+    border:1px solid antiquewhite;
+  }
 }
 
 .card {
@@ -187,67 +201,74 @@ main {
   width: 100%;
   padding: 20px;
   font-size: 16px;
+
+  &-inner-border {
+    border: 2px solid #222;
+    border-radius: 5px;
+    padding: 20px 0;
+  }
+
+  &-selected {
+    border: 5px solid $select-color;
+  }
 }
 
-.card-inner-border {
-  border: 2px solid #222;
-  border-radius: 5px;
-  padding: 20px 0;
-}
-
-.card-selected {
-  border: 5px solid red;
-}
-
-.judge-hover {
+.judge-hover{
   transition: all 0.25s;
   transform: scale(1.05);
 }
 
-.choice-container:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+.choice {
+  &-container {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
 
-.choice-card {
-  float: left;
-  margin: 15px 2% 5%;
-  padding: 6px;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-  max-width: 45%;
-  background-color: white;
-}
+  &-card {
+    float: left;
+    margin: 15px 2% 5%;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    max-width: 45%;
+    background-color: white;
 
-.choice-card:hover {
-  transition: all 0.25s;
-  transform: scale(1.05);
-}
+    &:hover {
+      transition: all 0.25s;
+      transform: scale(1.05);
+    }
 
-.choice-card-inner-border {
-  border: 2px solid #111;
-  border-radius: 5px;
-}
+    &-inner-border {
+      border: 2px solid #111;
+      border-radius: 5px;
+    }
 
-.choice-card-img {
-  width: 100%;
-  height: 200px;
-}
+    &-img {
+    width: 100%;
+    height: 200px;
 
-.choice-card-chosen {
-  background-color: red;
-  border: 1px solid red;
-  max-width: 100%;
-}
+    }
 
-@media only screen and (max-width: 768px) {
+    &-chosen {
+      background-color: $select-color;
+      border: 1px solid $select-color;
+      max-width: 100%;
+
+    }
+  }
+}
+@media only screen and (max-width:768px) {
   .chat {
     display: none;
   }
+
   .topic-container {
     flex: 0 0 40%;
   }
+
   #bottom-text,
   #top-text {
     font-size: 18px;
@@ -257,5 +278,3 @@ main {
 #choice-card-container {
   display: none;
 }
-
-/*# sourceMappingURL=style.css.map */

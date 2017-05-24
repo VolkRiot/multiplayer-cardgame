@@ -34,3 +34,13 @@ npm-debug.log
 
 # VIM .swp files
 *.swp
+
+# Google secrets
+secrets.js
+
+# ImgFlip Api Config
+meme_config.js
+
+# VScode debug configurations
+.vscode
+

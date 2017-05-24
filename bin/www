@@ -21,12 +21,16 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+var io = require('socket.io')(server);
+
+// Here we launch socket io backend-events (app-events/index.js)
+require('../app-events/')(io, db);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-db.sequelize.sync().then(function() {
+db.sequelize.sync({/*force: true*/}).then(function() {
   server.listen(port, function() {
   console.log("App listening on PORT " + port);
   });
@@ -83,6 +87,14 @@ function onError(error) {
   }
 }
 
+process.on('uncaughtException', function(err) { 
+  for(var i = 0; i < 5; i++)
+  {
+    console.log("===================================")
+  }
+  console.log(err);
+});
+
 /**
  * Event listener for HTTP server "listening" event.
  */
@@ -94,3 +106,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+module.exports = server;
